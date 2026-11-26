@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="description" content="سَنَد - دليل الإسعافات الأولية بالعربية والإنجليزية">
+<title>سَنَد | دليل الإسعافات الأولية</title>
+
+<style>
+:root {
+  --blue:#2463EB;
+  --blue-dark:#1746B5;
+  --blue-soft:#EEF4FF;
+  --red:#DC3545;
+  --red-soft:#FFF0F1;
+  --green:#0D9488;
+  --orange:#E58B24;
+  --bg:#F5F7FB;
+  --white:#FFFFFF;
+  --text:#172B4D;
+  --muted:#758399;
+  --border:#E7ECF3;
+  --shadow:0 8px 30px rgba(27,55,100,.055);
+  --radius:20px;
+}
+
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  font-size:15px;
+  line-height:1.8;
+  min-height:100vh;
+  padding-top:env(safe-area-inset-top);
+}
+
+button,input {
+  font:inherit;
+}
+
+button {
+  cursor:pointer;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+#app {
+  width:100%;
+  min-height:100vh;
+}
+
+.container {
+  max-width:760px;
+  margin:auto;
+  padding:18px 17px 115px;
+}
+
+/* HEADER */
+
+.header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:22px;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:11px;
+}
+
+.logo {
+  width:54px;
+  height:54px;
+  display:grid;
+  place-items:center;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:17px;
+  box-shadow:var(--shadow);
+}
+
+.logo svg {
+  width:39px;
+  height:39px;
+}
+
+.brand-name {
+  color:var(--blue);
+  font-size:29px;
+  font-weight:900;
+  line-height:1.2;
+}
+
+.brand-sub {
+  color:var(--muted);
+  font-size:11px;
+}
+
+.language-btn {
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:9px 13px;
+  color:var(--blue);
+  font-weight:800;
+}
+
+/* HERO */
+
+.hero {
+  background:linear-gradient(135deg,#FFFFFF 0%,#F0F5FF 100%);
+  border:1px solid #E1EAFB;
+  border-radius:25px;
+  padding:23px 20px;
+  margin-bottom:18px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero h1 {
+  font-size:26px;
+  font-weight:900;
+  line-height:1.5;
+  margin-bottom:5px;
+}
+
+.hero p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.hero-symbol {
+  position:absolute;
+  inset-inline-end:12px;
+  top:10px;
+  width:105px;
+  height:105px;
+  opacity:.09;
+}
+
+.hero-content {
+  position:relative;
+  z-index:1;
+  max-width:85%;
+}
+
+/* EMERGENCY */
+
+.emergency-main {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:linear-gradient(120deg,#E33D4E,#BD2038);
+  color:white;
+  padding:17px 19px;
+  border-radius:19px;
+  box-shadow:0 8px 22px #DC354525;
+  margin:17px 0;
+}
+
+.emergency-main .label {
+  font-weight:800;
+  font-size:17px;
+}
+
+.emergency-main small {
+  display:block;
+  font-size:12px;
+  opacity:.9;
+}
+
+.emergency-main strong {
+  font-size:33px;
+  direction:ltr;
+}
+
+.emergency-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+  margin-bottom:22px;
+}
+
+.emergency-card {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:12px 5px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:2px;
+  transition:.2s;
+}
+
+.emergency-card:active {
+  transform:scale(.96);
+}
+
+.emergency-card .number {
+  font-size:23px;
+  font-weight:900;
+  color:var(--blue);
+  direction:ltr;
+}
+
+.emergency-card .service {
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* SECTION TITLES */
+
+.section-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:25px 0 13px;
+}
+
+.section-heading h2 {
+  font-size:19px;
+  font-weight:900;
+}
+
+.section-heading span {
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* SEARCH */
+
+.search-box {
+  position:relative;
+  margin:18px 0;
+}
+
+.search-box input {
+  width:100%;
+  height:57px;
+  border:1.5px solid var(--border);
+  border-radius:17px;
+  background:white;
+  padding:10px 48px 10px 15px;
+  color:var(--text);
+  outline:none;
+  transition:.2s;
+}
+
+.search-box input:focus {
+  border-color:var(--blue);
+  box-shadow:0 0 0 4px #2463EB12;
+}
+
+.search-icon {
+  position:absolute;
+  right:17px;
+  top:14px;
+  font-size:21px;
+  color:var(--muted);
+}
+
+[dir="ltr"] .search-icon {
+  right:auto;
+  left:17px;
+}
+
+[dir="ltr"] .search-box input {
+  padding:10px 15px 10px 48px;
+}
+
+/* QUICK ACCESS */
+
+.quick-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+}
+
+.quick-card {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:7px;
+  padding:16px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  min-height:126px;
+  box-shadow:var(--shadow);
+  transition:.2s;
+}
+
+.quick-card:active {
+  transform:scale(.97);
+}
+
+.quick-icon {
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  font-size:23px;
+  background:var(--blue-soft);
+}
+
+.quick-card strong {
+  font-size:16px;
+  font-weight:850;
+}
+
+.quick-card small {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+}
+
+/* CATEGORIES */
+
+.category-tabs {
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:3px 0 12px;
+  scrollbar-width:none;
+}
+
+.category-tabs::-webkit-scrollbar {
+  display:none;
+}
+
+.category-tab {
+  white-space:nowrap;
+  border:1px solid var(--border);
+  background:white;
+  color:var(--muted);
+  border-radius:30px;
+  padding:8px 15px;
+  font-size:13px;
+  font-weight:700;
+}
+
+.category-tab.active {
+  background:var(--blue);
+  border-color:var(--blue);
+  color:white;
+}
+
+/* CASE CARDS */
+
+.case-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+}
+
+.case-card {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:14px;
+  min-height:145px;
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  transition:.2s;
+}
+
+.case-card:active {
+  transform:scale(.97);
+}
+
+.case-icon {
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  font-size:23px;
+}
+
+.case-card strong {
+  font-size:16px;
+  font-weight:850;
+}
+
+.case-card small {
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.5;
+}
+
+/* BUTTONS */
+
+.primary-btn {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:100%;
+  border:0;
+  background:var(--blue);
+  color:white;
+  padding:13px 17px;
+  border-radius:15px;
+  font-weight:800;
+}
+
+.secondary-btn {
+  background:var(--blue-soft);
+  color:var(--blue);
+  border:0;
+  border-radius:13px;
+  padding:10px 14px;
+  font-weight:800;
+}
+
+/* DETAIL PAGE */
+
+.back-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:9px 14px;
+  color:var(--blue);
+  font-weight:800;
+  margin-bottom:19px;
+}
+
+.detail-hero {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:19px;
+  margin-bottom:15px;
+}
+
+.detail-icon {
+  width:62px;
+  height:62px;
+  display:grid;
+  place-items:center;
+  border-radius:19px;
+  font-size:32px;
+  margin-bottom:12px;
+}
+
+.detail-hero h1 {
+  font-size:25px;
+  font-weight:900;
+}
+
+.detail-hero p {
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.urgent-alert {
+  background:var(--red-soft);
+  border:1px solid #F4CCD1;
+  border-radius:17px;
+  padding:15px;
+  margin:14px 0;
+  color:#9E2534;
+}
+
+.urgent-alert strong {
+  display:block;
+  margin-bottom:5px;
+}
+
+/* LESSON SECTIONS */
+
+.lesson {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:19px;
+  padding:17px;
+  margin:13px 0;
+}
+
+.lesson h3 {
+  font-size:17px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.lesson p {
+  font-size:14px;
+}
+
+.lesson ol,
+.lesson ul {
+  padding-inline-start:22px;
+}
+
+.lesson li {
+  padding:5px 0;
+  font-size:14px;
+}
+
+.lesson li::marker {
+  color:var(--blue);
+  font-weight:900;
+}
+
+.warning-lesson {
+  background:#FFF9F2;
+  border-color:#F4E2C7;
+}
+
+.warning-lesson h3 {
+  color:#B66B12;
+}
+
+/* ILLUSTRATIONS */
+
+.illustration {
+  background:#F4F7FC;
+  border-radius:16px;
+  padding:12px;
+  margin:13px 0;
+  text-align:center;
+}
+
+.illustration svg {
+  width:100%;
+  max-height:220px;
+  display:block;
+  margin:auto;
+}
+
+.illustration-caption {
+  font-size:12px;
+  color:var(--muted);
+  margin-top:7px;
+}
+
+/* FIXED EMERGENCY BUTTON */
+
+.fixed-emergency {
+  position:fixed;
+  z-index:20;
+  bottom:calc(12px + env(safe-area-inset-bottom));
+  inset-inline:14px;
+  max-width:730px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  background:var(--red);
+  color:white;
+  padding:13px;
+  border-radius:17px;
+  font-weight:900;
+  box-shadow:0 7px 25px #DC354540;
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top:28px;
+  padding:16px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:17px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* RESPONSIVE */
+
+@media(min-width:600px) {
+  .container {
+    padding-top:28px;
+  }
+
+  .quick-grid {
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .case-grid {
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:360px) {
+  .container {
+    padding-inline:12px;
+  }
+
+  .case-grid {
+    gap:8px;
+  }
+
+  .case-card {
+    padding:11px;
+  }
+}
+
+[hidden] {
+  display:none !important;
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+  <main class="container">
+    <div style="text-align:center;padding:70px 10px">
+      <div style="font-size:45px;color:#2463EB;font-weight:900">سَنَد</div>
+      <p style="color:#758399">جاري تجهيز التطبيق...</p>
+    </div>
+  </main>
+</div>
+
+<script>
+/* ==========================================
+   SANAD FIRST AID APP
+   PART 1: DESIGN AND APPLICATION SHELL
+   ========================================== */
+
+const APP_CONFIG = {
+  name: "سَنَد",
+  version: "2.0",
+  defaultLanguage: "ar",
+  country: "EG"
+};
+
+const EMERGENCY_NUMBERS = [
+  {
+    id:"ambulance",
+    number:"123",
+    ar:"الإسعاف",
+    en:"Ambulance",
+    icon:"🚑",
+    color:"#DC3545"
+  },
+  {
+    id:"police",
+    number:"122",
+    ar:"النجدة",
+    en:"Police",
+    icon:"🚔",
+    color:"#2463EB"
+  },
+  {
+    id:"fire",
+    number:"180",
+    ar:"المطافئ",
+    en:"Fire Department",
+    icon:"🚒",
+    color:"#E58B24"
+  },
+  {
+    id:"gas",
+    number:"129",
+    ar:"طوارئ الغاز",
+    en:"Gas Emergency",
+    icon:"🏠",
+    color:"#0D9488"
+  },
+  {
+    id:"electricity",
+    number:"121",
+    ar:"طوارئ الكهرباء",
+    en:"Electricity Emergency",
+    icon:"⚡",
+    color:"#D49A21"
+  }
+];
+
+let currentLanguage = APP_CONFIG.defaultLanguage;
+let currentCategory = "all";
+let currentPage = "home";
+let currentCase = null;
+let searchTerm = "";
+let favorites = [];
+</script>
+</body>
+</html>
