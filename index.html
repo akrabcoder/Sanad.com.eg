@@ -3,705 +3,768 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="description" content="سَنَد - دليل الإسعافات الأولية بالعربية والإنجليزية">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1268e8">
 <title>سَنَد | دليل الإسعافات الأولية</title>
-
 <style>
-:root {
-  --blue:#2463EB;
-  --blue-dark:#1746B5;
-  --blue-soft:#EEF4FF;
-  --red:#DC3545;
-  --red-soft:#FFF0F1;
-  --green:#0D9488;
-  --orange:#E58B24;
-  --bg:#F5F7FB;
-  --white:#FFFFFF;
-  --text:#172B4D;
-  --muted:#758399;
-  --border:#E7ECF3;
-  --shadow:0 8px 30px rgba(27,55,100,.055);
-  --radius:20px;
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+  --blue:#1769e8;
+  --blue2:#0e4fbd;
+  --pale:#edf4ff;
+  --bg:#f5f8fd;
+  --card:#ffffff;
+  --text:#18243a;
+  --muted:#748198;
+  --border:#e7edf5;
+  --red:#e5484d;
+  --green:#159b70;
+  --shadow:0 8px 28px rgba(25,60,110,.07);
 }
-
-* {
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  -webkit-tap-highlight-color:transparent;
-}
-
-html {
-  scroll-behavior:smooth;
-}
-
-body {
-  font-family:"Segoe UI",Tahoma,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  font-size:15px;
-  line-height:1.8;
-  min-height:100vh;
-  padding-top:env(safe-area-inset-top);
-}
-
-button,input {
-  font:inherit;
-}
-
-button {
-  cursor:pointer;
-}
-
-a {
-  color:inherit;
-  text-decoration:none;
-}
-
-#app {
-  width:100%;
-  min-height:100vh;
-}
-
-.container {
-  max-width:760px;
-  margin:auto;
-  padding:18px 17px 115px;
-}
-
-/* HEADER */
-
-.header {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:22px;
-}
-
-.brand {
-  display:flex;
-  align-items:center;
-  gap:11px;
-}
-
-.logo {
-  width:54px;
-  height:54px;
-  display:grid;
-  place-items:center;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:17px;
-  box-shadow:var(--shadow);
-}
-
-.logo svg {
-  width:39px;
-  height:39px;
-}
-
-.brand-name {
-  color:var(--blue);
-  font-size:29px;
-  font-weight:900;
-  line-height:1.2;
-}
-
-.brand-sub {
-  color:var(--muted);
-  font-size:11px;
-}
-
-.language-btn {
-  display:flex;
-  align-items:center;
-  gap:6px;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:13px;
-  padding:9px 13px;
-  color:var(--blue);
-  font-weight:800;
-}
-
-/* HERO */
-
-.hero {
-  background:linear-gradient(135deg,#FFFFFF 0%,#F0F5FF 100%);
-  border:1px solid #E1EAFB;
-  border-radius:25px;
-  padding:23px 20px;
-  margin-bottom:18px;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero h1 {
-  font-size:26px;
-  font-weight:900;
-  line-height:1.5;
-  margin-bottom:5px;
-}
-
-.hero p {
-  color:var(--muted);
-  font-size:14px;
-}
-
-.hero-symbol {
-  position:absolute;
-  inset-inline-end:12px;
-  top:10px;
-  width:105px;
-  height:105px;
-  opacity:.09;
-}
-
-.hero-content {
-  position:relative;
-  z-index:1;
-  max-width:85%;
-}
-
-/* EMERGENCY */
-
-.emergency-main {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:linear-gradient(120deg,#E33D4E,#BD2038);
-  color:white;
-  padding:17px 19px;
-  border-radius:19px;
-  box-shadow:0 8px 22px #DC354525;
-  margin:17px 0;
-}
-
-.emergency-main .label {
-  font-weight:800;
-  font-size:17px;
-}
-
-.emergency-main small {
-  display:block;
-  font-size:12px;
-  opacity:.9;
-}
-
-.emergency-main strong {
-  font-size:33px;
-  direction:ltr;
-}
-
-.emergency-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:9px;
-  margin-bottom:22px;
-}
-
-.emergency-card {
-  background:white;
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:12px 5px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:2px;
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:'Cairo',Tahoma,Arial,sans-serif;
   transition:.2s;
 }
-
-.emergency-card:active {
-  transform:scale(.96);
+button,input{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+.app{max-width:1200px;margin:auto;padding:0 22px 50px}
+header{
+  height:78px;display:flex;align-items:center;
+  justify-content:space-between;gap:15px;
 }
-
-.emergency-card .number {
-  font-size:23px;
-  font-weight:900;
-  color:var(--blue);
-  direction:ltr;
+.brand{display:flex;align-items:center;gap:11px}
+.logo{
+  width:47px;height:47px;background:white;border:1px solid var(--border);
+  border-radius:15px;display:grid;place-items:center;
+  color:var(--blue);font-size:25px;font-weight:900;
+  box-shadow:var(--shadow)
 }
-
-.emergency-card .service {
-  font-size:12px;
-  color:var(--muted);
+.brand-name{font-size:23px;font-weight:900;color:var(--blue);line-height:1.2}
+.brand-sub{font-size:10px;color:var(--muted);font-weight:600}
+.header-actions{display:flex;gap:8px}
+.icon-btn{
+  border:1px solid var(--border);background:white;color:var(--text);
+  padding:9px 13px;border-radius:12px;font-weight:800;font-size:13px
 }
-
-/* SECTION TITLES */
-
-.section-heading {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin:25px 0 13px;
+.hero{
+  background:linear-gradient(120deg,#0e4fbd,#237ef4);
+  border-radius:25px;padding:35px;color:white;position:relative;overflow:hidden;
+  box-shadow:0 15px 35px rgba(23,105,232,.2);
 }
-
-.section-heading h2 {
-  font-size:19px;
-  font-weight:900;
+.hero:after{
+  content:"✚";position:absolute;left:5%;top:-40px;
+  font-size:190px;color:rgba(255,255,255,.07);transform:rotate(-15deg)
 }
-
-.section-heading span {
-  font-size:12px;
-  color:var(--muted);
+.hero-content{position:relative;z-index:1;max-width:650px}
+.hero-tag{
+  display:inline-block;background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.2);padding:5px 12px;
+  border-radius:30px;font-size:12px;font-weight:700
 }
-
-/* SEARCH */
-
-.search-box {
-  position:relative;
-  margin:18px 0;
+.hero h1{font-size:clamp(27px,4vw,43px);line-height:1.4;margin:13px 0 8px;font-weight:900}
+.hero p{font-size:14px;line-height:2;margin:0;color:#e6efff}
+.search-wrap{
+  display:flex;align-items:center;gap:10px;background:white;
+  border-radius:15px;padding:5px 15px;margin-top:23px;
+  max-width:570px;box-shadow:0 5px 18px rgba(0,0,0,.08)
 }
-
-.search-box input {
-  width:100%;
-  height:57px;
-  border:1.5px solid var(--border);
-  border-radius:17px;
-  background:white;
-  padding:10px 48px 10px 15px;
-  color:var(--text);
-  outline:none;
-  transition:.2s;
+.search-wrap span{font-size:20px;color:var(--muted)}
+.search-wrap input{
+  border:0;outline:0;width:100%;padding:12px 0;color:var(--text);
+  background:transparent;font-size:14px
 }
-
-.search-box input:focus {
-  border-color:var(--blue);
-  box-shadow:0 0 0 4px #2463EB12;
+.emergency{
+  margin-top:23px;background:white;border:1px solid var(--border);
+  border-radius:20px;padding:19px;box-shadow:var(--shadow)
 }
-
-.search-icon {
-  position:absolute;
-  right:17px;
-  top:14px;
-  font-size:21px;
-  color:var(--muted);
+.section-heading{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:10px;margin-bottom:14px
 }
-
-[dir="ltr"] .search-icon {
-  right:auto;
-  left:17px;
+.section-heading h2{font-size:17px;margin:0;font-weight:900}
+.section-heading small{color:var(--muted);font-size:11px}
+.emergency-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.emergency-item{
+  border:1px solid var(--border);border-radius:14px;padding:12px 8px;
+  text-align:center;background:#fff;transition:.2s
 }
-
-[dir="ltr"] .search-box input {
-  padding:10px 15px 10px 48px;
+.emergency-item:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.emergency-item .num{font-size:25px;font-weight:900;direction:ltr;color:var(--red)}
+.emergency-item .label{font-size:12px;font-weight:800}
+.emergency-item .hint{font-size:10px;color:var(--muted)}
+.notice{
+  margin-top:15px;padding:12px 15px;background:#fff8e9;
+  border:1px solid #ffe4ad;border-radius:13px;
+  font-size:12px;line-height:1.9;color:#76521b
 }
-
-/* QUICK ACCESS */
-
-.quick-grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:11px;
+.categories{display:flex;gap:8px;overflow-x:auto;padding:20px 0 13px;scrollbar-width:none}
+.categories::-webkit-scrollbar{display:none}
+.cat-btn{
+  white-space:nowrap;border:1px solid var(--border);background:white;
+  border-radius:30px;padding:8px 15px;font-size:12px;
+  color:var(--muted);font-weight:800
 }
-
-.quick-card {
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:7px;
-  padding:16px;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:18px;
-  min-height:126px;
-  box-shadow:var(--shadow);
-  transition:.2s;
+.cat-btn.active{background:var(--blue);border-color:var(--blue);color:white}
+.list-heading{display:flex;align-items:center;justify-content:space-between;margin:12px 0}
+.list-heading h2{font-size:19px;margin:0;font-weight:900}
+#resultCount{font-size:12px;color:var(--muted)}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.case-card{
+  background:white;border:1px solid var(--border);border-radius:18px;
+  padding:17px;cursor:pointer;transition:.2s;box-shadow:0 3px 12px rgba(20,50,90,.025)
 }
-
-.quick-card:active {
-  transform:scale(.97);
+.case-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#c8dcff}
+.case-top{display:flex;align-items:center;justify-content:space-between}
+.case-icon{
+  width:49px;height:49px;border-radius:15px;background:var(--pale);
+  display:grid;place-items:center;font-size:25px
 }
-
-.quick-icon {
-  width:43px;
-  height:43px;
-  display:grid;
-  place-items:center;
-  border-radius:14px;
-  font-size:23px;
-  background:var(--blue-soft);
+.case-arrow{color:#a1adbf;font-size:20px}
+.case-card h3{font-size:15px;margin:13px 0 4px;font-weight:900}
+.case-card p{font-size:11px;line-height:1.9;color:var(--muted);margin:0}
+.case-tag{
+  display:inline-block;margin-top:12px;padding:4px 9px;border-radius:20px;
+  background:#f1f5fb;color:#65738b;font-size:10px;font-weight:800
 }
-
-.quick-card strong {
-  font-size:16px;
-  font-weight:850;
+.empty{
+  display:none;background:white;padding:35px;text-align:center;
+  border-radius:16px;color:var(--muted);grid-column:1/-1
 }
-
-.quick-card small {
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.5;
+footer{text-align:center;padding:35px 0 10px;color:var(--muted);font-size:11px;line-height:2}
+.overlay{
+  display:none;position:fixed;inset:0;background:rgba(10,25,50,.55);
+  z-index:10;align-items:flex-end;justify-content:center;padding:15px
 }
-
-/* CATEGORIES */
-
-.category-tabs {
-  display:flex;
-  gap:8px;
-  overflow-x:auto;
-  padding:3px 0 12px;
-  scrollbar-width:none;
+.overlay.show{display:flex}
+.modal{
+  background:white;width:min(760px,100%);max-height:92vh;overflow:auto;
+  border-radius:24px;padding:24px;position:relative;
+  animation:slide .2s ease
 }
-
-.category-tabs::-webkit-scrollbar {
-  display:none;
+@keyframes slide{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+.close{
+  position:absolute;left:17px;top:16px;border:0;background:#f0f3f8;
+  width:36px;height:36px;border-radius:50%;font-size:19px
 }
-
-.category-tab {
-  white-space:nowrap;
-  border:1px solid var(--border);
-  background:white;
-  color:var(--muted);
-  border-radius:30px;
-  padding:8px 15px;
-  font-size:13px;
-  font-weight:700;
+.modal-icon{
+  width:65px;height:65px;border-radius:19px;background:var(--pale);
+  display:grid;place-items:center;font-size:32px;margin-bottom:12px
 }
-
-.category-tab.active {
-  background:var(--blue);
-  border-color:var(--blue);
-  color:white;
+.modal h2{font-size:24px;margin:0 0 5px;font-weight:900;padding-left:40px}
+.modal-sub{font-size:12px;color:var(--muted);line-height:1.8}
+.detail-section{margin-top:20px}
+.detail-section h3{font-size:15px;margin:0 0 9px;font-weight:900}
+.detail-section ul{margin:0;padding-right:20px}
+.detail-section li{font-size:13px;line-height:2.1;margin-bottom:5px}
+.steps li::marker{color:var(--blue);font-weight:900}
+.dont{
+  background:#fff2f2;border:1px solid #ffdede;border-radius:14px;
+  padding:13px;margin-top:17px
 }
-
-/* CASE CARDS */
-
-.case-grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:11px;
+.dont h3{color:#c8323b}
+.call-box{
+  background:#edf5ff;border-radius:14px;padding:14px;margin-top:17px;
+  font-size:12px;line-height:2
 }
-
-.case-card {
-  background:white;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:14px;
-  min-height:145px;
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-  transition:.2s;
+.modal-call{
+  display:inline-block;background:var(--red);color:white;
+  padding:9px 17px;border-radius:10px;font-weight:900;margin-top:8px
 }
-
-.case-card:active {
-  transform:scale(.97);
+.modal-en{direction:ltr;text-align:left}
+[dir="ltr"] .modal-en{text-align:left}
+.hidden{display:none!important}
+@media(max-width:850px){.case-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:550px){
+ .app{padding:0 13px 35px}
+ header{height:68px}
+ .brand-name{font-size:20px}
+ .hero{padding:25px 19px;border-radius:20px}
+ .hero h1{font-size:28px}
+ .emergency-grid{grid-template-columns:repeat(2,1fr)}
+ .case-grid{grid-template-columns:1fr 1fr;gap:9px}
+ .case-card{padding:12px}
+ .case-icon{width:42px;height:42px;font-size:22px}
+ .case-card h3{font-size:13px}
+ .case-card p{font-size:10px}
+ .modal{padding:20px 17px;border-radius:22px}
 }
-
-.case-icon {
-  width:43px;
-  height:43px;
-  display:grid;
-  place-items:center;
-  border-radius:14px;
-  font-size:23px;
+@media(max-width:360px){.case-grid{grid-template-columns:1fr}}
+body.dark{
+ --bg:#101827;--card:#182438;--text:#edf3ff;--muted:#9cabc1;
+ --border:#2a3a52;--pale:#203b61;--shadow:0 8px 28px rgba(0,0,0,.2)
 }
-
-.case-card strong {
-  font-size:16px;
-  font-weight:850;
-}
-
-.case-card small {
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.5;
-}
-
-/* BUTTONS */
-
-.primary-btn {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  width:100%;
-  border:0;
-  background:var(--blue);
-  color:white;
-  padding:13px 17px;
-  border-radius:15px;
-  font-weight:800;
-}
-
-.secondary-btn {
-  background:var(--blue-soft);
-  color:var(--blue);
-  border:0;
-  border-radius:13px;
-  padding:10px 14px;
-  font-weight:800;
-}
-
-/* DETAIL PAGE */
-
-.back-btn {
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:13px;
-  padding:9px 14px;
-  color:var(--blue);
-  font-weight:800;
-  margin-bottom:19px;
-}
-
-.detail-hero {
-  background:white;
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:19px;
-  margin-bottom:15px;
-}
-
-.detail-icon {
-  width:62px;
-  height:62px;
-  display:grid;
-  place-items:center;
-  border-radius:19px;
-  font-size:32px;
-  margin-bottom:12px;
-}
-
-.detail-hero h1 {
-  font-size:25px;
-  font-weight:900;
-}
-
-.detail-hero p {
-  color:var(--muted);
-  margin-top:4px;
-}
-
-.urgent-alert {
-  background:var(--red-soft);
-  border:1px solid #F4CCD1;
-  border-radius:17px;
-  padding:15px;
-  margin:14px 0;
-  color:#9E2534;
-}
-
-.urgent-alert strong {
-  display:block;
-  margin-bottom:5px;
-}
-
-/* LESSON SECTIONS */
-
-.lesson {
-  background:white;
-  border:1px solid var(--border);
-  border-radius:19px;
-  padding:17px;
-  margin:13px 0;
-}
-
-.lesson h3 {
-  font-size:17px;
-  font-weight:900;
-  margin-bottom:12px;
-}
-
-.lesson p {
-  font-size:14px;
-}
-
-.lesson ol,
-.lesson ul {
-  padding-inline-start:22px;
-}
-
-.lesson li {
-  padding:5px 0;
-  font-size:14px;
-}
-
-.lesson li::marker {
-  color:var(--blue);
-  font-weight:900;
-}
-
-.warning-lesson {
-  background:#FFF9F2;
-  border-color:#F4E2C7;
-}
-
-.warning-lesson h3 {
-  color:#B66B12;
-}
-
-/* ILLUSTRATIONS */
-
-.illustration {
-  background:#F4F7FC;
-  border-radius:16px;
-  padding:12px;
-  margin:13px 0;
-  text-align:center;
-}
-
-.illustration svg {
-  width:100%;
-  max-height:220px;
-  display:block;
-  margin:auto;
-}
-
-.illustration-caption {
-  font-size:12px;
-  color:var(--muted);
-  margin-top:7px;
-}
-
-/* FIXED EMERGENCY BUTTON */
-
-.fixed-emergency {
-  position:fixed;
-  z-index:20;
-  bottom:calc(12px + env(safe-area-inset-bottom));
-  inset-inline:14px;
-  max-width:730px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  background:var(--red);
-  color:white;
-  padding:13px;
-  border-radius:17px;
-  font-weight:900;
-  box-shadow:0 7px 25px #DC354540;
-}
-
-/* FOOTER */
-
-.footer {
-  margin-top:28px;
-  padding:16px;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:17px;
-  color:var(--muted);
-  font-size:12px;
-}
-
-/* RESPONSIVE */
-
-@media(min-width:600px) {
-  .container {
-    padding-top:28px;
-  }
-
-  .quick-grid {
-    grid-template-columns:repeat(4,1fr);
-  }
-
-  .case-grid {
-    grid-template-columns:repeat(3,1fr);
-  }
-}
-
-@media(max-width:360px) {
-  .container {
-    padding-inline:12px;
-  }
-
-  .case-grid {
-    gap:8px;
-  }
-
-  .case-card {
-    padding:11px;
-  }
-}
-
-[hidden] {
-  display:none !important;
-}
+body.dark .emergency,body.dark .case-card,body.dark .icon-btn,
+body.dark .emergency-item,body.dark .search-wrap,body.dark .categories .cat-btn,
+body.dark .modal{background:#182438;color:var(--text);border-color:var(--border)}
+body.dark .search-wrap input{color:white}
+body.dark .case-tag{background:#26354b;color:#c1cde0}
+body.dark .notice{background:#3a3020;color:#ffe2a4;border-color:#66512b}
+body.dark .dont{background:#3b252b;border-color:#63343b}
+body.dark .call-box{background:#203b61}
+body.dark .close{background:#26354b;color:white}
 </style>
 </head>
-
 <body>
-<div id="app">
-  <main class="container">
-    <div style="text-align:center;padding:70px 10px">
-      <div style="font-size:45px;color:#2463EB;font-weight:900">سَنَد</div>
-      <p style="color:#758399">جاري تجهيز التطبيق...</p>
+<div class="app">
+
+<header>
+  <div class="brand">
+    <div class="logo">سَ</div>
+    <div>
+      <div class="brand-name">سَنَد</div>
+      <div class="brand-sub" id="brandSub">دليل الإسعافات الأولية</div>
     </div>
-  </main>
+  </div>
+  <div class="header-actions">
+    <button class="icon-btn" id="langBtn" onclick="toggleLang()">EN</button>
+    <button class="icon-btn" onclick="toggleDark()" aria-label="تغيير المظهر">◐</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-tag" id="heroTag">✚ معاك وقت الطوارئ</span>
+    <h1 id="heroTitle">اعرف تتصرف.. ممكن تنقذ حياة</h1>
+    <p id="heroDesc">دليل مبسط للإسعافات الأولية يساعدك تتعرف على الحالات الطارئة وتاخد الخطوة الصح لحد وصول المساعدة الطبية.</p>
+    <div class="search-wrap">
+      <span>⌕</span>
+      <input id="searchInput" type="search" placeholder="ابحث عن حالة... مثال: حروق، نزيف، اختناق" oninput="renderCases()">
+    </div>
+  </div>
+</section>
+
+<section class="emergency">
+  <div class="section-heading">
+    <h2 id="emergencyTitle">☎ أرقام الطوارئ في مصر</h2>
+    <small id="emergencySub">اضغط على الرقم للاتصال</small>
+  </div>
+  <div class="emergency-grid">
+    <a class="emergency-item" href="tel:123">
+      <div class="num">123</div><div class="label" data-ar="الإسعاف" data-en="Ambulance">الإسعاف</div>
+      <div class="hint" data-ar="حالة طبية طارئة" data-en="Medical emergency">حالة طبية طارئة</div>
+    </a>
+    <a class="emergency-item" href="tel:122">
+      <div class="num">122</div><div class="label" data-ar="الشرطة" data-en="Police">الشرطة</div>
+      <div class="hint" data-ar="النجدة" data-en="Police assistance">النجدة</div>
+    </a>
+    <a class="emergency-item" href="tel:180">
+      <div class="num">180</div><div class="label" data-ar="المطافي" data-en="Fire service">المطافي</div>
+      <div class="hint" data-ar="حريق أو إنقاذ" data-en="Fire or rescue">حريق أو إنقاذ</div>
+    </a>
+    <a class="emergency-item" href="tel:129">
+      <div class="num">129</div><div class="label" data-ar="طوارئ الغاز" data-en="Gas emergency">طوارئ الغاز</div>
+      <div class="hint" data-ar="تسريب غاز" data-en="Gas leak">تسريب غاز</div>
+    </a>
+  </div>
+  <div class="notice" id="noticeText">⚠️ لو في خطر على الحياة، اتصل بالإسعاف فوراً. ما تستناش ظهور كل الأعراض، وما تعرّضش نفسك للخطر وأنت بتحاول تساعد.</div>
+</section>
+
+<div class="categories" id="categories">
+  <button class="cat-btn active" data-cat="all" onclick="setCategory('all',this)">الكل</button>
+  <button class="cat-btn" data-cat="heart" onclick="setCategory('heart',this)">القلب والتنفس</button>
+  <button class="cat-btn" data-cat="injury" onclick="setCategory('injury',this)">الإصابات والجروح</button>
+  <button class="cat-btn" data-cat="medical" onclick="setCategory('medical',this)">حالات طبية</button>
+  <button class="cat-btn" data-cat="environment" onclick="setCategory('environment',this)">البيئة والحرارة</button>
+  <button class="cat-btn" data-cat="poison" onclick="setCategory('poison',this)">تسمم ولدغات</button>
+</div>
+
+<div class="list-heading">
+  <h2 id="casesTitle">حالات الإسعافات الأولية</h2>
+  <span id="resultCount"></span>
+</div>
+
+<div class="case-grid" id="caseGrid"></div>
+<div class="empty" id="emptyState">مش لاقي الحالة دي. جرّب كلمة تانية.</div>
+
+<footer>
+  <strong>سَنَد</strong> — المعرفة البسيطة ممكن تصنع فرق كبير.<br>
+  هذا التطبيق للتوعية فقط، ولا يغني عن الإسعاف أو التدريب الطبي المعتمد.<br>
+  المعلومات لا تُستخدم لتشخيص الأمراض أو استبدال تعليمات الطبيب.
+</footer>
+</div>
+
+<div class="overlay" id="overlay" onclick="outsideClose(event)">
+  <div class="modal" id="modal">
+    <button class="close" onclick="closeModal()">×</button>
+    <div id="modalContent"></div>
+  </div>
 </div>
 
 <script>
-/* ==========================================
-   SANAD FIRST AID APP
-   PART 1: DESIGN AND APPLICATION SHELL
-   ========================================== */
-
-const APP_CONFIG = {
-  name: "سَنَد",
-  version: "2.0",
-  defaultLanguage: "ar",
-  country: "EG"
-};
-
-const EMERGENCY_NUMBERS = [
-  {
-    id:"ambulance",
-    number:"123",
-    ar:"الإسعاف",
-    en:"Ambulance",
-    icon:"🚑",
-    color:"#DC3545"
-  },
-  {
-    id:"police",
-    number:"122",
-    ar:"النجدة",
-    en:"Police",
-    icon:"🚔",
-    color:"#2463EB"
-  },
-  {
-    id:"fire",
-    number:"180",
-    ar:"المطافئ",
-    en:"Fire Department",
-    icon:"🚒",
-    color:"#E58B24"
-  },
-  {
-    id:"gas",
-    number:"129",
-    ar:"طوارئ الغاز",
-    en:"Gas Emergency",
-    icon:"🏠",
-    color:"#0D9488"
-  },
-  {
-    id:"electricity",
-    number:"121",
-    ar:"طوارئ الكهرباء",
-    en:"Electricity Emergency",
-    icon:"⚡",
-    color:"#D49A21"
-  }
+const cases = [
+{
+id:1,cat:"injury",icon:"🔥",ar:"الحروق",en:"Burns",
+desc:"حرق بسبب نار أو سائل ساخن أو سطح ساخن أو مادة كيميائية.",
+sym:"احمرار وألم وتورم أو فقاعات. الحروق العميقة ممكن يكون لون الجلد فيها أبيض أو متفحم، وأحياناً الإحساس بالألم يقل.",
+steps:[
+"أبعد المصاب عن مصدر الحرق بأمان، من غير ما تعرّض نفسك للخطر.",
+"حط مكان الحرق تحت مياه جارية باردة أو فاترة لمدة 20 دقيقة تقريباً. ما تستخدمش تلج.",
+"شيل الخواتم والساعات والملابس الضيقة القريبة من الحرق لو مش لازقة في الجلد.",
+"غطّي الحرق بغطاء نظيف غير لاصق أو شاش معقم بشكل خفيف.",
+"اطلب المساعدة الطبية لو الحرق كبير أو عميق أو في الوجه أو اليدين أو القدمين أو الأعضاء التناسلية أو المفاصل، أو لو سببه كهرباء أو مادة كيميائية."
+],
+dont:["ما تحطش معجون أسنان أو زبدة أو زيت أو قهوة أو تلج.","ما تفرقعش الفقاقيع وما تشدش الملابس اللازقة في الجلد."],
+urgent:"الحروق الكبيرة أو العميقة أو الكيميائية أو الكهربائية تحتاج تقييماً طبياً عاجلاً."
+},
+{
+id:2,cat:"heart",icon:"❤️",ar:"توقف القلب والإنعاش القلبي",en:"Cardiac arrest & CPR",
+desc:"شخص وقع فجأة ومش بيستجيب ومش بيتنفس بشكل طبيعي.",
+sym:"فقدان الوعي، عدم الاستجابة، وعدم وجود تنفس طبيعي أو وجود شهقات متقطعة فقط.",
+steps:[
+"اتأكد إن المكان آمن.",
+"نادي على الشخص وهز كتفه برفق. لو مش بيرد، اطلب من حد يتصل بالإسعاف 123 ويجيب جهاز AED لو متاح.",
+"لو الشخص مش بيتنفس بشكل طبيعي، ابدأ ضغطات الصدر فوراً في منتصف الصدر.",
+"اضغط بسرعة 100 إلى 120 ضغطة في الدقيقة، وبعمق حوالي 5 إلى 6 سم للبالغ، وسيب الصدر يرجع لوضعه بعد كل ضغطة.",
+"لو مش متدرب على التنفس الصناعي، استمر في ضغطات الصدر فقط. لو متدرب، اتبع دورة 30 ضغطة وضغطتين تنفس.",
+"استخدم جهاز AED بمجرد وصوله واتبع تعليماته الصوتية."
+],
+dont:["ما تضيعش وقت في محاولة تحسس النبض لو مش متخصص.","ما توقفش الضغطات إلا لو المصاب بدأ يتحرك ويتنفس بشكل طبيعي، أو وصلت المساعدة، أو بقي المكان غير آمن."],
+urgent:"دي حالة مهددة للحياة: اتصل بالإسعاف 123 فوراً وابدأ الإنعاش."
+},
+{
+id:3,cat:"heart",icon:"🫁",ar:"الاختناق بجسم غريب",en:"Choking",
+desc:"أكل أو جسم غريب قافل مجرى التنفس.",
+sym:"كحة ضعيفة أو معدومة، عدم القدرة على الكلام أو التنفس، أو تغير لون الشفايف للزرقة.",
+steps:[
+"لو الشخص بيكح بقوة وبيقدر يتكلم أو يتنفس، شجعه يكح وراقبه.",
+"لو بالغ أو طفل أكبر من سنة ومش قادر يتنفس أو يتكلم أو يكح بفاعلية: اطلب المساعدة.",
+"وجّه 5 ضربات قوية بين لوحي الكتف، مع إمالة المصاب للأمام.",
+"لو الانسداد مستمر، اعمل 5 ضغطات بطنية للداخل ولأعلى، وكرر التبادل بين 5 ضربات ظهر و5 ضغطات بطن.",
+"لو فقد الوعي، نزّله للأرض بأمان واتصل بالإسعاف وابدأ الإنعاش القلبي. افحص الفم قبل النفس فقط لو شايف الجسم بوضوح."
+],
+dont:["ما تدخلش صوابعك في الفم بشكل عشوائي.","الرضيع أقل من سنة له طريقة مختلفة: 5 ضربات ظهر و5 ضغطات صدر، مش ضغطات بطن."],
+urgent:"اتصل بالإسعاف فوراً لو الانسداد شديد أو المصاب فقد الوعي."
+},
+{
+id:4,cat:"injury",icon:"🩸",ar:"النزيف الشديد",en:"Severe bleeding",
+desc:"نزيف مستمر أو غزير بسبب جرح أو إصابة.",
+sym:"دم كتير أو بيندفع من الجرح، دوخة، شحوب، عرق بارد أو ضعف شديد.",
+steps:[
+"اتأكد إن المكان آمن، والبس قفازات لو متاحة.",
+"اضغط بقوة مباشرة على الجرح باستخدام شاش أو قطعة قماش نظيفة.",
+"استمر في الضغط من غير ما ترفع القماش كل شوية عشان تبص على الجرح.",
+"لو القماش اتشبع بالدم، حط طبقة تانية فوقه واستمر في الضغط.",
+"لو النزيف من طرف شديد ومهدد للحياة ومش بيتوقف بالضغط، استخدم رباط وقف نزيف تجاري لو متاح وكنت تعرف استخدامه.",
+"خلي المصاب مستلقي ودافئ، واتصل بالإسعاف 123."
+],
+dont:["ما تشيلش جسم مغروس في الجرح؛ اضغط حواليه.","ما تحاولش تنظف جرح بينزف بغزارة قبل السيطرة على النزيف."],
+urgent:"أي نزيف شديد أو علامات صدمة تستلزم الإسعاف فوراً."
+},
+{
+id:5,cat:"medical",icon:"😵",ar:"الإغماء",en:"Fainting",
+desc:"فقدان مؤقت للوعي غالباً بسبب انخفاض مؤقت في وصول الدم للمخ.",
+sym:"دوخة، عرق، غثيان، شحوب، ثم فقدان وعي قصير.",
+steps:[
+"ساعد الشخص يستلقي على ظهره في مكان آمن.",
+"ارفع رجليه قليلاً لو مفيش إصابة أو ألم يمنع ده.",
+"فك الملابس الضيقة وحافظ على تهوية المكان.",
+"لو رجع لوعيه، خليه يستريح وما يقومش بسرعة.",
+"لو ما فاقش بسرعة، أو مش بيتنفس بشكل طبيعي، اتصل بالإسعاف وابدأ الإنعاش عند الحاجة."
+],
+dont:["ما ترشش مياه على وشه وما تضربوش.","ما تديلوش أكل أو شرب وهو فاقد الوعي."],
+urgent:"اطلب الإسعاف لو الإغماء أثناء المجهود، أو صاحبه ألم صدر أو صعوبة تنفس أو إصابة أو تشنج، أو لم يستعد وعيه سريعاً."
+},
+{
+id:6,cat:"medical",icon:"🍬",ar:"هبوط السكر",en:"Low blood sugar",
+desc:"انخفاض مستوى السكر في الدم، خصوصاً عند مرضى السكري.",
+sym:"رعشة، عرق، جوع شديد، دوخة، صداع، تغير التصرفات أو التشوش.",
+steps:[
+"لو الشخص واعي وقادر يبلع بأمان، ساعده يقيس السكر لو الجهاز موجود.",
+"لو مشتبه في هبوط السكر، اديله حوالي 15 جرام سكر سريع الامتصاص، زي نصف كوب عصير عادي أو 3 إلى 4 أقراص جلوكوز حسب العبوة.",
+"استنى 15 دقيقة، وأعد قياس السكر لو تقدر. لو لسه منخفض أو الأعراض مستمرة، كرر.",
+"بعد التحسن، ياكل وجبة أو سناك مناسب لو موعد الوجبة بعيد.",
+"لو فقد الوعي أو مش قادر يبلع، اتصل بالإسعاف فوراً. استخدم الجلوكاجون فقط لو متاح وشخص يعرف استخدامه."
+],
+dont:["ما تحطش سكر أو سوائل في فم شخص فاقد الوعي أو مش قادر يبلع.","ما تسيبش الشخص المصاب لوحده."],
+urgent:"فقدان الوعي أو التشنجات أو عدم القدرة على البلع حالة طارئة."
+},
+{
+id:7,cat:"medical",icon:"📈",ar:"ارتفاع السكر ومضاعفاته",en:"High blood sugar",
+desc:"ارتفاع مستوى السكر، وقد يتطور أحياناً لحالة خطيرة.",
+sym:"عطش شديد، تبول متكرر، جفاف، تعب وتشوش الرؤية. القيء وألم البطن والتنفس العميق أو رائحة نفس فاكهية قد تشير لحالة خطيرة.",
+steps:[
+"ساعد الشخص يقيس السكر لو الجهاز متاح.",
+"خليه يشرب مياه لو واعي وقادر على البلع، وما عندوش منع طبي من السوائل.",
+"يتبع خطة العلاج المكتوبة من طبيبه، وما ياخدش جرعة إضافية من نفسك.",
+"لو عنده قيء متكرر أو ألم بطن أو تنفس غير طبيعي أو تشوش، اطلب الإسعاف."
+],
+dont:["ما تديش إنسولين أو أدوية من عندك.","ما تتجاهلش القيء أو اضطراب الوعي."],
+urgent:"التنفس العميق، القيء، الجفاف الشديد أو اضطراب الوعي تستدعي تقييماً عاجلاً."
+},
+{
+id:8,cat:"heart",icon:"💓",ar:"ألم الصدر والاشتباه في جلطة القلب",en:"Possible heart attack",
+desc:"ألم أو ضغط في الصدر قد يكون علامة على أزمة قلبية.",
+sym:"ضغط أو عصر في الصدر، ألم يمتد للذراع أو الفك أو الظهر، عرق بارد، غثيان أو ضيق نفس. الأعراض قد تختلف بين الأشخاص.",
+steps:[
+"اتصل بالإسعاف 123 فوراً، وما تستناش الألم يختفي.",
+"خلي المصاب يرتاح في وضع مريح وقلل حركته.",
+"فك الملابس الضيقة وراقب التنفس والوعي.",
+"اتبع تعليمات موظف الإسعاف. لا تخلي المصاب يسوق بنفسه للمستشفى.",
+"لو فقد الوعي ومش بيتنفس طبيعياً، ابدأ ضغطات الصدر واستخدم AED لو متاح."
+],
+dont:["ما تسيبوش لوحده.","ما تديلوش أدوية من نفسك. اسأل الإسعاف عن أي دواء مناسب."],
+urgent:"ألم الصدر الجديد أو الشديد أو المصحوب بضيق نفس يستلزم الاتصال بالإسعاف فوراً."
+},
+{
+id:9,cat:"medical",icon:"🧠",ar:"السكتة الدماغية (الجلطة)",en:"Stroke",
+desc:"انقطاع أو نزيف في تدفق الدم للمخ، وكل دقيقة مهمة.",
+sym:"اعوجاج مفاجئ في الوجه، ضعف ذراع أو رجل خصوصاً ناحية واحدة، صعوبة الكلام أو فهمه، اضطراب مفاجئ في الرؤية أو التوازن.",
+steps:[
+"استخدم اختبار FAST: اطلب منه يبتسم، ويرفع ذراعيه، ويقول جملة بسيطة.",
+"لو لاحظت أي علامة، اتصل بالإسعاف 123 فوراً.",
+"سجل وقت بداية الأعراض أو آخر وقت كان فيه طبيعياً.",
+"خليه في وضع آمن ومريح وراقب تنفسه.",
+"لو فقد الوعي لكنه بيتنفس، حافظ على مجرى التنفس وراقبه."
+],
+dont:["ما تديلوش أكل أو شرب أو أسبرين من نفسك.","ما تستناش الأعراض تتحسن حتى لو اختفت."],
+urgent:"اتصل بالإسعاف فوراً حتى لو الأعراض اختفت بعد دقائق."
+},
+{
+id:10,cat:"injury",icon:"🦴",ar:"الكسور والإصابات",en:"Fractures",
+desc:"إصابة في العظام بعد سقوط أو حادث أو ضربة.",
+sym:"ألم شديد، تورم، كدمات، تشوه أو صعوبة تحريك الطرف.",
+steps:[
+"ما تحركش المصاب إلا لو المكان فيه خطر مباشر.",
+"ثبت الجزء المصاب في الوضع اللي لقيته عليه، من غير محاولة تعديله.",
+"حط كمادة باردة ملفوفة في قماش لتقليل التورم، من غير ضغط مباشر على الجلد.",
+"لو فيه جرح مفتوح، غطّيه بشاش نظيف من غير ضغط على العظم الظاهر.",
+"اطلب الإسعاف لو الإصابة شديدة أو فيها تشوه أو فقد إحساس أو نزيف."
+],
+dont:["ما تحاولش ترجع العظمة مكانها.","ما تحركش الرقبة أو الظهر لو مشتبه في إصابة بالعمود الفقري."],
+urgent:"الحوادث الشديدة، كسور الرقبة والظهر والحوض، أو فقد الإحساس تستلزم الإسعاف."
+},
+{
+id:11,cat:"environment",icon:"⚡",ar:"الصعق الكهربائي",en:"Electric shock",
+desc:"مرور تيار كهربائي في جسم المصاب.",
+sym:"حروق، ألم أو تقلص عضلي، فقدان وعي، اضطراب ضربات القلب أو توقف التنفس.",
+steps:[
+"ما تلمسش المصاب طالما مصدر الكهرباء متصل.",
+"افصل التيار من القاطع الرئيسي لو تقدر بأمان.",
+"لو الجهد عالي أو سلك واقع، ابعد عن المكان واتصل بالطوارئ ولا تحاول الاقتراب.",
+"بعد التأكد من فصل الكهرباء، اتصل بالإسعاف.",
+"لو المصاب مش بيتنفس طبيعياً، ابدأ الإنعاش واستخدم AED لو متاح.",
+"غطّ الحروق بضمادة نظيفة وجافة."
+],
+dont:["ما تستخدمش مياه أو جسم معدني لإبعاد سلك كهرباء.","ما تفترضش إن المصاب بخير لمجرد إنه واعي؛ الصعق ممكن يؤثر على القلب."],
+urgent:"كل صعق كهربائي مهم يحتاج تقييماً طبياً، خصوصاً الجهد العالي أو فقدان الوعي."
+},
+{
+id:12,cat:"environment",icon:"☀️",ar:"ضربة الشمس والإجهاد الحراري",en:"Heat stroke",
+desc:"ارتفاع خطير في حرارة الجسم بسبب الجو الحار أو المجهود.",
+sym:"إرهاق ودوخة وصداع وغثيان وتعرق شديد. ضربة الشمس قد تسبب تشوشاً أو تشنجات أو فقدان وعي.",
+steps:[
+"انقل المصاب لمكان بارد أو مظلل بأسرع ما يمكن.",
+"ابدأ التبريد فوراً: بلل الجلد بمياه باردة، واستخدم مراوح أو كمادات باردة.",
+"في حالة الاشتباه بضربة الشمس مع تشوش أو فقدان وعي، اتصل بالإسعاف فوراً.",
+"استمر في التبريد أثناء انتظار المساعدة.",
+"لو واعي تماماً وقادر يبلع، ممكن يشرب رشفات مياه."
+],
+dont:["ما تديلوش سوائل لو مشوش أو فاقد الوعي أو مش قادر يبلع.","ما تسيبوش في مكان حار أو داخل سيارة."],
+urgent:"تشوش الوعي أو التشنجات أو فقدان الوعي مع الحرارة العالية = طوارئ فورية."
+},
+{
+id:13,cat:"poison",icon:"☠️",ar:"التسمم والمواد الكيميائية",en:"Poisoning",
+desc:"ابتلاع أو استنشاق أو ملامسة مادة سامة.",
+sym:"قيء، ألم بطن، دوخة، صعوبة تنفس، حروق حول الفم أو اضطراب الوعي.",
+steps:[
+"أبعد المصاب عن مصدر المادة بأمان، من غير ما تلمس المادة أو تستنشقها.",
+"لو المادة على الجلد، انزع الملابس الملوثة واشطف الجلد بمياه جارية.",
+"لو دخلت العين، اشطفها بمياه جارية نظيفة باستمرار.",
+"احتفظ بعبوة المادة أو اسمها ومعلوماتها لعرضها على الطبيب.",
+"اتصل بالإسعاف 123 أو توجّه للطوارئ حسب شدة الحالة."
+],
+dont:["ما تحاولش تخلي المصاب يرجّع.","ما تديلوش لبن أو زيت أو أكل أو دواء كعلاج منزلي.","ما تخلطش مواد كيميائية لمحاولة معادلتها."],
+urgent:"صعوبة التنفس أو التشنجات أو فقدان الوعي أو ابتلاع مادة مجهولة تستدعي الإسعاف فوراً."
+},
+{
+id:14,cat:"poison",icon:"🐍",ar:"لدغة ثعبان",en:"Snake bite",
+desc:"لدغة من ثعبان قد تكون سامة أو غير سامة.",
+sym:"ألم أو تورم مكان اللدغة، كدمات، غثيان، ضعف أو صعوبة تنفس.",
+steps:[
+"ابعد المصاب عن الثعبان من غير محاولة الإمساك به.",
+"خليه هادي وثابت قدر الإمكان، وقلل حركة الطرف المصاب.",
+"شيل الخواتم أو الأشياء الضيقة قبل زيادة التورم.",
+"ثبت الطرف المصاب بشكل مريح، وخلي المصاب يتلقى رعاية طبية عاجلة.",
+"اتصل بالإسعاف 123، وسجل شكل الثعبان من مسافة آمنة لو أمكن."
+],
+dont:["ما تشقش مكان اللدغة وما تمصش السم.","ما تحطش رباط ضاغط أو تلج أو كيماويات.","ما تحاولش تصطاد الثعبان."],
+urgent:"كل لدغة ثعبان تستلزم تقييماً طبياً عاجلاً."
+},
+{
+id:15,cat:"poison",icon:"🦂",ar:"لدغة العقرب",en:"Scorpion sting",
+desc:"لدغة عقرب قد تسبب ألماً موضعياً أو أعراضاً عامة.",
+sym:"ألم أو حرقان أو تنميل مكان اللدغة، وأحياناً تعرق أو قيء أو اضطراب ضربات القلب أو صعوبة تنفس.",
+steps:[
+"ابعد عن العقرب بأمان.",
+"اغسل مكان اللدغة بالمياه والصابون.",
+"حط كمادة باردة ملفوفة في قماش لفترات قصيرة لتخفيف الألم.",
+"قلل حركة الطرف المصاب واطلب تقييماً طبياً، خصوصاً للأطفال.",
+"اتصل بالإسعاف فوراً لو ظهرت أعراض عامة أو صعوبة تنفس."
+],
+dont:["ما تشقش مكان اللدغة أو تمصه.","ما تحطش رباطاً ضاغطاً أو وصفات شعبية."],
+urgent:"الأطفال أو صعوبة التنفس أو التشنجات أو الأعراض العامة تحتاج رعاية عاجلة."
+},
+{
+id:16,cat:"environment",icon:"💨",ar:"استنشاق الدخان وأول أكسيد الكربون",en:"Smoke & carbon monoxide",
+desc:"التعرض لدخان حريق أو غاز أول أكسيد الكربون.",
+sym:"صداع، دوخة، غثيان، ضعف، تشوش، ضيق نفس أو فقدان وعي. أول أكسيد الكربون غاز بلا لون أو رائحة.",
+steps:[
+"ما تدخلش مكان مليان دخان أو غاز لإنقاذ شخص لو ده هيعرضك للخطر.",
+"اخرجوا للهواء الطلق فوراً لو تقدروا بأمان.",
+"اتصل بالمطافي 180 والإسعاف 123 حسب الحالة.",
+"ما ترجعش للمكان إلا بعد ما الجهات المختصة تأكد إنه آمن.",
+"راقب التنفس والوعي، وابدأ الإنعاش لو الشخص لا يتنفس طبيعياً بعد تأمين المكان."
+],
+dont:["ما تشغلش أو تطفي مفاتيح الكهرباء داخل مكان يُشتبه فيه تسريب غاز.","ما تعتمدش على اختفاء الرائحة؛ أول أكسيد الكربون بلا رائحة."],
+urgent:"أي اشتباه في تسمم أول أكسيد الكربون أو استنشاق دخان كثيف يحتاج مساعدة طبية عاجلة."
+},
+{
+id:17,cat:"medical",icon:"🤧",ar:"الحساسية المفرطة",en:"Anaphylaxis",
+desc:"رد فعل تحسسي شديد وسريع قد يهدد الحياة.",
+sym:"تورم اللسان أو الحلق، صعوبة تنفس، صفير، دوخة شديدة أو إغماء. قد يصاحبها طفح جلدي أو حكة.",
+steps:[
+"اتصل بالإسعاف 123 فوراً.",
+"لو مع المصاب قلم أدرينالين ذاتي موصوف له، ساعده يستخدمه فوراً في الجزء الخارجي من الفخذ حسب تعليمات الجهاز.",
+"خليه مستلقي، وارفع رجليه لو ده مريح ومفيش صعوبة تنفس تمنع الوضع ده.",
+"لو صعوبة التنفس شديدة، ممكن يقعد بوضع مريح مع تجنب الوقوف أو المشي.",
+"لو الأعراض مستمرة، اتبع تعليمات الإسعاف بشأن جرعة أخرى من قلم الأدرينالين إن كان متاحاً.",
+"راقب التنفس والوعي واستعد للإنعاش لو توقف التنفس الطبيعي."
+],
+dont:["ما تخليش المصاب يقف أو يمشي حتى لو حس بتحسن.","مضادات الحساسية لا تحل محل الأدرينالين في الحساسية المفرطة."],
+urgent:"دي حالة طارئة حتى لو الأعراض بدأت تتحسن بعد استخدام القلم."
+}
 ];
 
-let currentLanguage = APP_CONFIG.defaultLanguage;
-let currentCategory = "all";
-let currentPage = "home";
-let currentCase = null;
-let searchTerm = "";
-let favorites = [];
+let currentCat="all";
+let english=false;
+
+function toggleDark(){
+  document.body.classList.toggle("dark");
+}
+function toggleLang(){
+  english=!english;
+  document.documentElement.lang=english?"en":"ar";
+  document.documentElement.dir=english?"ltr":"rtl";
+  document.getElementById("langBtn").textContent=english?"عربي":"EN";
+  document.getElementById("brandSub").textContent=english?"First Aid Guide":"دليل الإسعافات الأولية";
+  document.getElementById("heroTag").textContent=english?"✚ Here for emergencies":"✚ معاك وقت الطوارئ";
+  document.getElementById("heroTitle").textContent=english?"Know what to do. You could save a life.":"اعرف تتصرف.. ممكن تنقذ حياة";
+  document.getElementById("heroDesc").textContent=english?"A simple first aid guide to help you recognize emergencies and take the right first steps until medical help arrives.":"دليل مبسط للإسعافات الأولية يساعدك تتعرف على الحالات الطارئة وتاخد الخطوة الصح لحد وصول المساعدة الطبية.";
+  document.getElementById("searchInput").placeholder=english?"Search for a condition...":"ابحث عن حالة... مثال: حروق، نزيف، اختناق";
+  document.getElementById("emergencyTitle").textContent=english?"☎ Emergency numbers in Egypt":"☎ أرقام الطوارئ في مصر";
+  document.getElementById("emergencySub").textContent=english?"Tap a number to call":"اضغط على الرقم للاتصال";
+  document.getElementById("noticeText").textContent=english?"⚠️ If someone's life is at risk, call emergency services immediately. Do not put yourself in danger while trying to help.":"⚠️ لو في خطر على الحياة، اتصل بالإسعاف فوراً. ما تستناش ظهور كل الأعراض، وما تعرّضش نفسك للخطر وأنت بتحاول تساعد.";
+  document.getElementById("casesTitle").textContent=english?"First aid conditions":"حالات الإسعافات الأولية";
+  document.getElementById("emptyState").textContent=english?"No matching condition. Try another search.":"مش لاقي الحالة دي. جرّب كلمة تانية.";
+  document.querySelectorAll("[data-ar]").forEach(el=>el.textContent=english?el.dataset.en:el.dataset.ar);
+  document.querySelectorAll(".cat-btn").forEach(btn=>{
+    const labels={
+      all:["الكل","All"],heart:["القلب والتنفس","Heart & breathing"],
+      injury:["الإصابات والجروح","Injuries"],medical:["حالات طبية","Medical"],
+      environment:["البيئة والحرارة","Environment"],poison:["تسمم ولدغات","Poison & bites"]
+    };
+    btn.textContent=labels[btn.dataset.cat][english?1:0];
+  });
+  renderCases();
+}
+function setCategory(cat,btn){
+  currentCat=cat;
+  document.querySelectorAll(".cat-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  renderCases();
+}
+function renderCases(){
+  const query=document.getElementById("searchInput").value.trim().toLowerCase();
+  const grid=document.getElementById("caseGrid");
+  grid.innerHTML="";
+  const filtered=cases.filter(c=>{
+    const matchesCat=currentCat==="all"||c.cat===currentCat;
+    const haystack=[c.ar,c.en,c.desc,c.sym,...c.steps,...c.dont].join(" ").toLowerCase();
+    return matchesCat&&(!query||haystack.includes(query));
+  });
+  document.getElementById("resultCount").textContent=english?`${filtered.length} conditions`:`${filtered.length} حالة`;
+  document.getElementById("emptyState").style.display=filtered.length?"none":"block";
+  filtered.forEach(c=>{
+    const card=document.createElement("article");
+    card.className="case-card";
+    card.innerHTML=`
+      <div class="case-top"><div class="case-icon">${c.icon}</div><span class="case-arrow">←</span></div>
+      <h3>${english?c.en:c.ar}</h3>
+      <p>${english?translateDesc(c.id):c.desc}</p>
+      <span class="case-tag">${english?categoryName(c.cat,true):categoryName(c.cat,false)}</span>`;
+    card.addEventListener("click",()=>openCase(c.id));
+    grid.appendChild(card);
+  });
+}
+function categoryName(cat,en){
+ const names={
+ heart:["القلب والتنفس","Heart & breathing"],
+ injury:["الإصابات والجروح","Injuries"],
+ medical:["حالات طبية","Medical"],
+ environment:["البيئة والحرارة","Environment"],
+ poison:["تسمم ولدغات","Poison & bites"]
+ };
+ return names[cat][en?1:0];
+}
+function translateDesc(id){
+ const c=cases.find(x=>x.id===id);
+ const descriptions={
+ 1:"First steps for burns caused by heat, liquids or chemicals.",
+ 2:"Recognize cardiac arrest and begin CPR while help is coming.",
+ 3:"What to do when food or an object blocks the airway.",
+ 4:"Control serious bleeding and protect the injured person.",
+ 5:"Help someone who suddenly faints.",
+ 6:"Recognize and respond to low blood sugar.",
+ 7:"Recognize warning signs of dangerously high blood sugar.",
+ 8:"Recognize possible heart attack symptoms.",
+ 9:"Recognize stroke signs quickly using FAST.",
+ 10:"Initial care for suspected fractures and injuries.",
+ 11:"Stay safe and respond to an electric shock.",
+ 12:"Recognize heat stroke and cool the person quickly.",
+ 13:"Initial response to swallowed, inhaled or touched poisons.",
+ 14:"What to do after a suspected snake bite.",
+ 15:"Initial care after a scorpion sting.",
+ 16:"Respond safely to smoke or carbon monoxide exposure.",
+ 17:"Recognize and respond to a severe allergic reaction."
+ };
+ return descriptions[id]||c.desc;
+}
+function openCase(id){
+ const c=cases.find(x=>x.id===id);
+ if(!c)return;
+ const title=english?c.en:c.ar;
+ const desc=english?translateDesc(id):c.desc;
+ const symTitle=english?"How to recognize it":"إزاي تعرف الحالة؟";
+ const stepTitle=english?"What should you do?":"تتصرف إزاي؟";
+ const dontTitle=english?"What should you NOT do?":"ممنوع تعمل إيه؟";
+ const urgentTitle=english?"When is it an emergency?":"إمتى تطلب الإسعاف؟";
+ const symptoms=english?englishSymptoms(id):c.sym;
+ const steps=english?englishSteps(id):c.steps;
+ const dont=english?englishDont(id):c.dont;
+ const urgent=english?englishUrgent(id):c.urgent;
+ document.getElementById("modalContent").innerHTML=`
+  <div class="modal-icon">${c.icon}</div>
+  <h2>${title}</h2>
+  <div class="modal-sub">${desc}</div>
+  <div class="detail-section">
+   <h3>${symTitle}</h3><p style="font-size:13px;line-height:2;margin:0">${symptoms}</p>
+  </div>
+  <div class="detail-section">
+   <h3>${stepTitle}</h3>
+   <ol class="steps">${steps.map(s=>`<li>${s}</li>`).join("")}</ol>
+  </div>
+  <div class="dont detail-section">
+   <h3>✕ ${dontTitle}</h3>
+   <ul>${dont.map(s=>`<li>${s}</li>`).join("")}</ul>
+  </div>
+  <div class="call-box">
+   <strong>⚠ ${urgentTitle}</strong><br>${urgent}
+   <br><a class="modal-call" href="tel:123">${english?"Call ambulance 123":"اتصل بالإسعاف 123"}</a>
+  </div>`;
+ document.getElementById("overlay").classList.add("show");
+ document.body.style.overflow="hidden";
+}
+function englishSymptoms(id){
+ const x={
+ 1:"Redness, pain, swelling or blisters. Deep burns may look white or charred.",
+ 2:"Unresponsive and not breathing normally, or only gasping.",
+ 3:"Unable to speak, breathe or cough effectively.",
+ 4:"Heavy or continuous bleeding, pale skin, cold sweat or dizziness.",
+ 5:"Dizziness, sweating, nausea, paleness and brief loss of consciousness.",
+ 6:"Shaking, sweating, hunger, dizziness, headache or confusion.",
+ 7:"Extreme thirst, frequent urination, dehydration, vomiting or unusual breathing.",
+ 8:"Chest pressure or pain, pain spreading to arm, jaw or back, sweating or breathlessness.",
+ 9:"Sudden face drooping, arm weakness, speech difficulty, vision or balance problems.",
+ 10:"Severe pain, swelling, bruising, deformity or difficulty moving.",
+ 11:"Burns, muscle spasms, loss of consciousness or abnormal heartbeat.",
+ 12:"Headache, dizziness, nausea, confusion, seizures or collapse in hot conditions.",
+ 13:"Vomiting, abdominal pain, dizziness, breathing problems or altered consciousness.",
+ 14:"Pain or swelling at the bite, bruising, nausea, weakness or breathing difficulty.",
+ 15:"Pain, burning or numbness; sometimes sweating, vomiting or breathing difficulty.",
+ 16:"Headache, dizziness, nausea, weakness, confusion or breathing difficulty.",
+ 17:"Tongue or throat swelling, breathing difficulty, wheezing, dizziness or collapse."
+ };
+ return x[id];
+}
+function englishSteps(id){
+ const x={
+ 1:["Move away from the source safely.","Cool under cool running water for about 20 minutes. Do not use ice.","Remove nearby jewellery or tight clothing if not stuck to the skin.","Cover loosely with a clean non-stick dressing.","Seek urgent medical care for large, deep, chemical or electrical burns, or burns to sensitive areas."],
+ 2:["Make sure the scene is safe.","Check responsiveness and normal breathing. Call emergency services (123) and get an AED.","If not breathing normally, start chest compressions in the centre of the chest.","Push at 100–120 per minute, about 5–6 cm deep for an adult, allowing full chest recoil.","If untrained, give hands-only CPR. If trained, use 30 compressions and 2 breaths.","Use an AED as soon as available and follow its prompts."],
+ 3:["If the person can cough strongly, encourage coughing.","For an adult or child over one year with severe choking, call for help.","Give 5 back blows between the shoulder blades, leaning them forward.","If still blocked, give 5 abdominal thrusts; alternate 5 back blows and 5 thrusts.","If unconscious, call emergency services and begin CPR. Remove an object only if clearly visible."],
+ 4:["Ensure safety and use gloves if available.","Apply firm, direct pressure with clean cloth or gauze.","Keep pressing without repeatedly lifting the cloth.","Add another layer if blood soaks through.","For life-threatening limb bleeding not controlled by pressure, use a commercial tourniquet if trained.","Call emergency services and keep the person warm."],
+ 5:["Help the person lie flat in a safe place.","Raise their legs slightly if there is no injury or discomfort.","Loosen tight clothing and provide fresh air.","Let them rest after waking; do not let them stand quickly.","If they do not wake promptly or are not breathing normally, call emergency services."],
+ 6:["If awake and able to swallow, check blood glucose if possible.","Give about 15 g of fast-acting sugar, such as half a cup of juice or glucose tablets according to the label.","Wait 15 minutes and recheck if possible. Repeat if still low or symptomatic.","After recovery, have a snack or meal if needed.","If unconscious or unable to swallow, call emergency services. Use prescribed glucagon only if available and someone knows how."],
+ 7:["Check blood glucose if possible.","Offer water if fully awake and able to swallow, unless medically restricted.","Follow their prescribed treatment plan; do not improvise extra medication.","Seek urgent help for vomiting, abdominal pain, unusual breathing or confusion."],
+ 8:["Call ambulance 123 immediately.","Keep the person resting in a comfortable position.","Loosen tight clothing and monitor breathing and responsiveness.","Follow emergency dispatcher instructions. Do not let them drive.","If unresponsive and not breathing normally, start CPR and use an AED."],
+ 9:["Use FAST: ask them to smile, raise both arms and repeat a simple sentence.","Call ambulance 123 immediately if any sign is present.","Note when symptoms started or when they were last known well.","Keep them safe and monitor breathing.","If unconscious but breathing, protect the airway and monitor."],
+ 10:["Do not move the person unless there is immediate danger.","Keep the injured part still in the position found.","Apply a wrapped cold pack if appropriate.","Cover open wounds with clean dressing without pressing on exposed bone.","Call emergency services for severe injury, deformity, numbness or major bleeding."],
+ 11:["Do not touch the person while they remain connected to electricity.","Switch off power at the main source if safe.","Stay away from high-voltage wires and call emergency services.","After power is off, call an ambulance.","If not breathing normally, start CPR and use an AED.","Cover burns with a clean, dry dressing."],
+ 12:["Move the person to a cool or shaded place.","Cool immediately with cool water, fans or cold wet cloths.","Call emergency services for confusion, collapse or suspected heat stroke.","Continue cooling while waiting for help.","Give small sips of water only if fully alert and able to swallow."],
+ 13:["Move away from the source safely.","If on skin, remove contaminated clothing and rinse with running water.","If in the eyes, rinse with clean running water.","Keep the container or product name for medical staff.","Call emergency services or seek urgent medical care."],
+ 14:["Move away from the snake; do not try to catch it.","Keep the person calm and still.","Remove rings or tight items before swelling increases.","Keep the limb comfortably still and seek urgent medical care.","Call ambulance 123. Note the snake's appearance from a safe distance if possible."],
+ 15:["Move away from the scorpion safely.","Wash the sting with soap and water.","Apply a cool cloth-wrapped compress briefly.","Limit movement and seek medical advice, especially for children.","Call emergency services for breathing problems or general symptoms."],
+ 16:["Do not enter a smoke-filled or gas-filled area if unsafe.","Move to fresh air immediately if possible.","Call fire service 180 and ambulance 123 as needed.","Do not re-enter until authorities say it is safe.","Monitor breathing and consciousness."],
+ 17:["Call ambulance 123 immediately.","If prescribed an adrenaline auto-injector is available, help use it in the outer thigh as directed.","Keep the person lying down if possible; avoid standing or walking.","If breathing is difficult, allow a comfortable position without standing.","Follow emergency dispatcher advice about further treatment.","Monitor breathing and be ready to start CPR if needed."]
+ };
+ return x[id];
+}
+function englishDont(id){
+ const x={
+ 1:["Do not use toothpaste, butter, oil or ice.","Do not burst blisters or pull off stuck clothing."],
+ 2:["Do not waste time trying to find a pulse if untrained.","Do not stop unless normal breathing returns, help takes over or the scene becomes unsafe."],
+ 3:["Do not blindly put fingers in the mouth.","Infants under one year need a different method: 5 back blows and 5 chest thrusts, not abdominal thrusts."],
+ 4:["Do not remove an embedded object; press around it.","Do not clean a heavily bleeding wound before controlling bleeding."],
+ 5:["Do not slap or splash water on the person.","Do not give food or drink while unconscious."],
+ 6:["Never put sugar or liquid in the mouth of someone unconscious or unable to swallow.","Do not leave them alone."],
+ 7:["Do not give insulin or medication without medical instructions.","Do not ignore vomiting or altered consciousness."],
+ 8:["Do not leave the person alone.","Do not give medication without medical advice."],
+ 9:["Do not give food, drink or aspirin without medical advice.","Do not wait to see if symptoms improve."],
+ 10:["Do not try to realign the bone.","Avoid moving the neck or back if spinal injury is suspected."],
+ 11:["Do not use water or metal to move a live wire.","Do not assume the person is fine just because they are awake."],
+ 12:["Do not give fluids to someone confused, unconscious or unable to swallow.","Do not leave them in a hot place or vehicle."],
+ 13:["Do not induce vomiting.","Do not give milk, oil, food or home remedies.","Do not mix chemicals to neutralize them."],
+ 14:["Do not cut or suck the bite.","Do not apply a tight tourniquet, ice or chemicals.","Do not try to catch the snake."],
+ 15:["Do not cut or suck the sting.","Do not apply a tight bandage or folk remedies."],
+ 16:["Do not enter a suspected gas leak to rescue someone if unsafe.","Do not operate electrical switches where gas may be leaking."],
+ 17:["Do not let the person stand or walk even if they feel better.","Antihistamines do not replace adrenaline in anaphylaxis."]
+ };
+ return x[id];
+}
+function englishUrgent(id){
+ const x={
+ 1:"Large, deep, chemical or electrical burns need urgent medical assessment.",
+ 2:"This is life-threatening. Call ambulance 123 and start CPR immediately.",
+ 3:"Call emergency services for severe choking or loss of consciousness.",
+ 4:"Severe bleeding or signs of shock require immediate emergency care.",
+ 5:"Call emergency services if fainting occurs during exertion, with chest pain, breathing difficulty, injury, seizure or prolonged unconsciousness.",
+ 6:"Unconsciousness, seizures or inability to swallow are emergencies.",
+ 7:"Deep breathing, vomiting, severe dehydration or confusion need urgent care.",
+ 8:"New or severe chest pain, especially with breathlessness, requires immediate ambulance care.",
+ 9:"Call immediately, even if symptoms disappear after a few minutes.",
+ 10:"Major accidents, suspected spine or pelvic fractures, or loss of sensation need emergency care.",
+ 11:"Every electric shock needs medical assessment, especially high voltage or loss of consciousness.",
+ 12:"Confusion, seizures or collapse in heat are immediate emergencies.",
+ 13:"Breathing difficulty, seizures, unconsciousness or unknown ingestion require immediate help.",
+ 14:"Every suspected snake bite needs urgent medical assessment.",
+ 15:"Children, breathing difficulty, seizures or general symptoms need urgent care.",
+ 16:"Suspected carbon monoxide poisoning or heavy smoke inhalation requires urgent medical care.",
+ 17:"Anaphylaxis is an emergency even if symptoms improve after using an injector."
+ };
+ return x[id];
+}
+function closeModal(){
+ document.getElementById("overlay").classList.remove("show");
+ document.body.style.overflow="";
+}
+function outsideClose(e){
+ if(e.target.id==="overlay")closeModal();
+}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+renderCases();
 </script>
 </body>
 </html>
